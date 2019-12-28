@@ -30,33 +30,6 @@
 		      < 0x1 0x00000000 0x0 0x40000000 >;
 	};
 
-	firmware {
-		android {
-			compatible = "android,firmware";
-			fstab {
-				compatible = "android,fstab";
-
-				vendor {
-					compatible = "android,vendor";
-					dev = "/dev/block/platform/700b0600.sdhci/by-name/VNR";
-					type = "ext4";
-					mnt_flags = "ro,barrier=1,discard";
-					fsmgr_flags = "wait";
-					status = "ok";
-				};
-
-				system {
-					compatible = "android,system";
-					dev = "/dev/block/platform/700b0600.sdhci/by-name/APP";
-					type = "ext4";
-					mnt_flags = "ro,barrier=1,discard";
-					fsmgr_flags = "wait";
-					status = "ok";
-				};
-			};
-		};
-	};
-
 	host1x@50000000 {
 		vi: vi@54080000 {
 			avdd-dsi-csi-supply = <&pp1200_avdd>;
